@@ -1,6 +1,8 @@
+"use client"
 import React from "react";
 import dayjs from "dayjs";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/navigation';
 import { useSelector } from "react-redux";
 
 import "./style.scss";
@@ -11,7 +13,8 @@ import PosterFallback from "../../assets/no-poster.png";
 
 const MovieCard = ({ data, fromSearch, mediaType }) => {
     const { url } = useSelector((state) => state.home);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
+    const { push } = useRouter();
     const posterUrl = data.poster_path
         ? url.poster + data.poster_path
         : PosterFallback;
@@ -19,7 +22,7 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
         <div
             className="movieCard"
             onClick={() =>
-                navigate(`/${data.media_type || mediaType}/${data.id}`)
+                push(`/details/${data.media_type || mediaType}/${data.id}`)
             }
         >
             <div className="posterBlock">

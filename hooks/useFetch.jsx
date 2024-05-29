@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from "react";
 import { fetchDataFromApi } from "../utils/api";
 const useFetch = (url) => {
@@ -10,6 +11,7 @@ const useFetch = (url) => {
         setData(null);
         setError(null);
 
+        // console.log("FETCHING MOVIES")
         fetchDataFromApi(url)
             .then((res) => {
                 setLoading(false);

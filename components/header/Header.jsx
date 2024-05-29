@@ -1,13 +1,19 @@
+'use client'
 import React, { useState, useEffect } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
-import { useNavigate, useLocation } from "react-router-dom";
+// import { useNavigate, useLocation } from "react-router-dom";
+import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+
 
 import "./style.scss";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import logo from "../../assets/movix-logo.svg";
+// import logo from "../../assets/movix-logo.svg";
+import logo from "../../assets/movix-logo.png"
+import Image from "next/image";
 
 const Header = () => {
     const [show, setShow] = useState("top");
@@ -15,12 +21,14 @@ const Header = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
     const [query, setQuery] = useState("");
     const [showSearch, setShowSearch] = useState("");
-    const navigate = useNavigate();
-    const location = useLocation();
+    // const navigate = useNavigate();
+    // const location = useLocation();
+    const pathname = usePathname()
+    const { push } = useRouter();
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [location]);
+    }, [pathname]);
 
     const controlNavbar = () => {
         if (window.scrollY > 200) {
@@ -44,7 +52,7 @@ const Header = () => {
 
     const searchQueryHandler = (event) => {
         if (event.key === "Enter" && query.length > 0) {
-            navigate(`/search/${query}`);
+            push(`/search/${query}`);
             setTimeout(() => {
                 setShowSearch(false);
             }, 1000);
@@ -63,9 +71,9 @@ const Header = () => {
 
     const navigationHandler = (type) => {
         if (type === "movie") {
-            navigate("/explore/movie");
+            push("/explore/movie");
         } else {
-            navigate("/explore/tv");
+            push("/explore/tv");
         }
         setMobileMenu(false);
     };
@@ -73,8 +81,8 @@ const Header = () => {
     return (
         <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
             <ContentWrapper>
-                <div className="logo" onClick={() => navigate("/")}>
-                    <img src={logo} alt="" />
+                <div className="logo" onClick={() => push("/")}>
+                    <Image src={logo} alt="" height={80} width={50} />
                 </div>
                 <ul className="menuItems">
                     <li

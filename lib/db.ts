@@ -6,7 +6,7 @@ import { pgTable, serial, varchar } from 'drizzle-orm/pg-core';
 import { eq, ilike } from 'drizzle-orm';
 
 export const db = drizzle(
-  neon(process.env.POSTGRES_URL!, {
+  neon('postgresql://authdb_owner:Y0uDIoT6XJnN@ep-divine-tooth-a5xpcqfx.us-east-2.aws.neon.tech/authdb?sslmode=require'!, {
     fetchOptions: {
       cache: 'no-store'
     }
