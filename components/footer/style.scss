@@ -11,9 +11,10 @@
         flex-direction: column;
     }
     .menuItems {
+        // border: 1px solid red;
         list-style-type: none;
         display: flex;
-        align-items: center;
+        // align-items: center;
         justify-content: center;
         gap: 15px;
         margin-bottom: 20px;
@@ -22,14 +23,25 @@
             gap: 30px;
         }
         .menuItem {
+            // border: 1px solid green;
             transition: all ease 0.3s;
             cursor: pointer;
             font-size: 12px;
             @include md {
                 font-size: 16px;
             }
-            &:hover {
-                color: var(--pink);
+            ul {
+                list-style: none;
+                a {
+                    text-decoration: none;
+                }
+                li {
+                    color: white;
+                    margin: 5px 0;
+                    &:hover {
+                        color: var(--pink);
+                    }
+                }
             }
         }
     }
