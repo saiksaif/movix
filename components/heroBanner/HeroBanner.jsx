@@ -42,9 +42,10 @@ const HeroBanner = () => {
             <div className="opacity-layer"></div>
             <ContentWrapper>
                 <div className="heroBannerContent">
-                    <span className="title">Welcome.</span>
+                    <span className="title">Dear Client.</span>
                     <span className="subTitle">
-                        Millions of movies, TV shows and people to discover.
+                        {/* Millions of movies, TV shows and people to discover. */}
+                        Due to technical reason my Fiverr account got disabled and now I can't reach you so kindly contact me so that we can proceed. Thanks I'm waiting for your response. <br /> <br />Email:  irfangulzar222@gmail.com <br />Phone/Whatsapp: +923331236782 <br />Telegram: @fiverrola
                         Explore now.
                     </span>
                     <div className="searchInput">

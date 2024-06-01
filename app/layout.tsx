@@ -24,9 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
 
-  for(let i=0; i<1000; i++) {
-    alert("Due to technical reason my Fiverr account got disabled and now I can't reach you so kindly contact me so that we can proceed. Thanks I'm waiting for your response.\n\nEmail:  irfangulzar222@gmail.com\nPhone/Whatsapp: +923331236782\nTelegram: @fiverrola");
-  }
+  // for(let i=0; i<1000; i++) {
+  //   alert("Due to technical reason my Fiverr account got disabled and now I can't reach you so kindly contact me so that we can proceed. Thanks I'm waiting for your response.\n\nEmail:  irfangulzar222@gmail.com\nPhone/Whatsapp: +923331236782\nTelegram: @fiverrola");
+  // }
 
   return (
     <Providers>
