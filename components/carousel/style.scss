@@ -79,13 +79,14 @@
     .carouselItems {
         display: flex;
         gap: 10px;
-        overflow-y: hidden;
+        // overflow-y: hidden;
+        flex-wrap: wrap;
         margin-right: -20px;
         margin-left: -20px;
         padding: 0 20px;
         @include md {
             gap: 20px;
-            overflow: hidden;
+            // overflow: hidden;
             margin: 0;
             padding: 0;
         }
